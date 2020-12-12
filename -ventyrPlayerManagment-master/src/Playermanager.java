@@ -142,7 +142,7 @@ public class Playermanager {
 			txtWeapon[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtWeapon[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtWeapon[i-1].setText("test");
-			txtWeapon[i-1].setBounds(380, 290, 185, 30);
+			txtWeapon[i-1].setBounds(380, 290 + ((i-1) * 35), 185, 30);
 			frame.getContentPane().add(txtWeapon[i-1]);
 			txtWeapon[i-1].setColumns(10);
 		}
@@ -152,7 +152,7 @@ public class Playermanager {
 			txtWeapondamage[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtWeapondamage[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtWeapondamage[i-1].setColumns(10);
-			txtWeapondamage[i-1].setBounds(585, 290, 42, 27);
+			txtWeapondamage[i-1].setBounds(585, 290 + ((i-1) * 35), 42, 27);
 			frame.getContentPane().add(txtWeapondamage[i-1]);
 		}
 		for(int i = 1; i<=4;i++) {
@@ -163,7 +163,7 @@ public class Playermanager {
 			txtWeaponFw[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtWeaponFw[i-1].setFont(new Font("Ubuntu", Font.BOLD, 17));
 			txtWeaponFw[i-1].setColumns(10);
-			txtWeaponFw[i-1].setBounds(641, 292, 30, 25);
+			txtWeaponFw[i-1].setBounds(641, 292 + ((i-1) * 35), 30, 25);
 			frame.getContentPane().add(txtWeaponFw[i-1]);
 		}
 
@@ -175,7 +175,7 @@ public class Playermanager {
 			txtArmor[i-1].setText("test");
 			txtArmor[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtArmor[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
-			txtArmor[i-1].setBounds(380, 485, 226, 27);
+			txtArmor[i-1].setBounds(380, 485 + ((i-1) * 35), 226, 27);
 			frame.getContentPane().add(txtArmor[i-1]);
 			txtArmor[i-1].setColumns(10);
 		}
@@ -186,7 +186,7 @@ public class Playermanager {
 			txtArmorpoint[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtArmorpoint[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtArmorpoint[i-1].setColumns(10);
-			txtArmorpoint[i-1].setBounds(625, 485, 42, 27);
+			txtArmorpoint[i-1].setBounds(625, 485 + ((i-1) * 35), 42, 27);
 			frame.getContentPane().add(txtArmorpoint[i-1]);
 		}
 
@@ -196,7 +196,7 @@ public class Playermanager {
 			txtDefensepoint[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtDefensepoint[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtDefensepoint[i-1].setColumns(10);
-			txtDefensepoint[i-1].setBounds(393, 664, 42, 27);
+			txtDefensepoint[i-1].setBounds(393, 664 , 42, 27);
 			frame.getContentPane().add(txtDefensepoint[i-1]);
 		}
 
@@ -208,7 +208,7 @@ public class Playermanager {
 			txtSpecialskill[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtSpecialskill[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtSpecialskill[i-1].setColumns(10);
-			txtSpecialskill[i-1].setBounds(708, 430, 279, 30);
+			txtSpecialskill[i-1].setBounds(708, 290 + ((i-1) * 35), 279, 30);
 			frame.getContentPane().add(txtSpecialskill[i-1]);
 		}
 
@@ -220,7 +220,7 @@ public class Playermanager {
 			txtSuffer[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtSuffer[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtSuffer[i-1].setColumns(10);
-			txtSuffer[i-1].setBounds(708, 522, 279, 30);
+			txtSuffer[i-1].setBounds(708, 522 + ((i-1) * 35), 279, 30);
 			frame.getContentPane().add(txtSuffer[i-1]);
 		}
 	}
@@ -228,7 +228,7 @@ public class Playermanager {
 		txtInventory = new JTextPane();
 		txtInventory.setFont(new Font("Ubuntu", Font.BOLD, 14));
 		txtInventory.setBackground(Color.LIGHT_GRAY);
-		txtInventory.setBounds(1031, 473, 302, 415);
+		txtInventory.setBounds(1031, 473 , 302, 415);
 		frame.getContentPane().add(txtInventory);
 	}
 	public void attributes() {
