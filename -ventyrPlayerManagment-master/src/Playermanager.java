@@ -43,10 +43,10 @@ public class Playermanager {
 	//Textfeld Variablen (als Variablen angelegt)
 	public JTextField txtAttention, txtStrength, txtKnowledge, txtMagic, txtInitiative, txtMovement; //Attribute variablen
 	public JTextField txtAge, txtName, txtFolk, txtJob, txtGold, txtSilver, txtCopper, txtSkillpoints; //Charackter information Variablen
-	public JTextField txtWounded1, txtWounded3, txtWounded2, txtWounded4, txtWounded5, txtWounded6, txtWounded7, txtDeadlywounded;	//Verwundet Variablen
-	public int[] seitlicherVersatz = {0,74,120,168,216,264,312,360,408};// Versatzwerte für die Rüstungspunkte und Lebenspunkte
-																		//TODO:Verwundet noch als Array anlegen!(Darstellung beachten -1 element weniger)
-																		//TODO:-Später noch erweitern auf Verwundet
+	public JTextField[] txtWounded = new JTextField[7]; //Verwundet Variablen im Array
+	public JTextField txtDeadlywounded;	//Tödlich Verwundet Variablen
+	public int[] seitlicherVersatz = {0,74,120,168,216,264,312,360,408};// Versatzwerte für die Rüstungspunkte,Lebenspunkte,Verwundet
+
 																		//TODO:werte automatisiert anpassen
 	/**
 	 * Launch the application.
@@ -292,63 +292,16 @@ public class Playermanager {
 			txtLifepoints[i-1].setBounds(393 + seitlicherVersatz[i-1], 760, 42, 27);
 			frame.getContentPane().add(txtLifepoints[i-1]);
 		}
-		
-		txtWounded1 = new JTextField();
-		txtWounded1.setText("999");
-		txtWounded1.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded1.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded1.setColumns(10);
-		txtWounded1.setBounds(469, 825, 30, 25);
-		frame.getContentPane().add(txtWounded1);
-		
-		txtWounded2 = new JTextField();
-		txtWounded2.setText("999");
-		txtWounded2.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded2.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded2.setColumns(10);
-		txtWounded2.setBounds(566, 825, 30, 25);
-		frame.getContentPane().add(txtWounded2);
-		
-		txtWounded3 = new JTextField();
-		txtWounded3.setText("999");
-		txtWounded3.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded3.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded3.setColumns(10);
-		txtWounded3.setBounds(517, 825, 30, 25);
-		frame.getContentPane().add(txtWounded3);
-		
-		txtWounded4 = new JTextField();
-		txtWounded4.setText("999");
-		txtWounded4.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded4.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded4.setColumns(10);
-		txtWounded4.setBounds(614, 827, 30, 25);
-		frame.getContentPane().add(txtWounded4);
-		
-		txtWounded5 = new JTextField();
-		txtWounded5.setText("999");
-		txtWounded5.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded5.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded5.setColumns(10);
-		txtWounded5.setBounds(665, 827, 30, 25);
-		frame.getContentPane().add(txtWounded5);
-		
-		txtWounded6 = new JTextField();
-		txtWounded6.setText("999");
-		txtWounded6.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded6.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded6.setColumns(10);
-		txtWounded6.setBounds(713, 828, 30, 25);
-		frame.getContentPane().add(txtWounded6);
-		
-		txtWounded7 = new JTextField();
-		txtWounded7.setText("999");
-		txtWounded7.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWounded7.setFont(new Font("Ubuntu", Font.BOLD, 12));
-		txtWounded7.setColumns(10);
-		txtWounded7.setBounds(762, 828, 30, 25);
-		frame.getContentPane().add(txtWounded7);
-		
+		for(int i = 1; i<=7;i++) {
+			txtWounded[i-1] = new JTextField();
+			txtWounded[i-1].setText("999");
+			txtWounded[i-1].setHorizontalAlignment(SwingConstants.CENTER);
+			txtWounded[i-1].setFont(new Font("Ubuntu", Font.BOLD, 12));
+			txtWounded[i-1].setColumns(10);
+			txtWounded[i-1].setBounds(396 + seitlicherVersatz[i] + i, 825, 30, 25); //i um den ersten großen versatz zu überspringen
+			frame.getContentPane().add(txtWounded[i-1]);
+		}
+
 		txtDeadlywounded = new JTextField();
 		txtDeadlywounded.setText("999");
 		txtDeadlywounded.setHorizontalAlignment(SwingConstants.CENTER);

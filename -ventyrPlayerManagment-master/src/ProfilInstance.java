@@ -14,7 +14,8 @@ public class ProfilInstance extends Playermanager{
 	String[] strSuffer = new String[3];//Attribute variablen
 	String[] strDefensepoint = new String[8] ;//Charackter information Variablen
 	String[] strLifepoints = new String[8]; //Lebenspunkte variablen
-	String strWounded1, strWounded3, strWounded2, strWounded4, strWounded5, strWounded6, strWounded7, strDeadlywounded;//Verwundet Variablen
+	String[] strWounded = new String[7];//Verwundet Variablen im Array
+	String strDeadlywounded;//Tödlich Verwundet Variablen
 	String  strAge, strName, strFolk, strJob, strGold, strSilver, strCopper, strSkillpoints;//variablen verteidigungs punkte
 	String strAttention, strStrength, strKnowledge, strMagic, strInitiative, strMovement;//Leiden variablen
 	
@@ -32,7 +33,8 @@ public class ProfilInstance extends Playermanager{
 	int[] lifePoints = new int[8];//Lebenspunkte variablen
 	int attention, strength, knowledge, magic, initiative, movement;//Attribute variablen
 	int age, name, folk, job, gold, silver, copper, skillpoints;//Charackter information Variablen
-	int wounded1, wounded3, wounded2, wounded4, wounded5, wounded6, wounded7, deadlyWounded;//Verwundet Variablen
+	int[] wounded = new int[7]; //Verwundet Variablen Array
+	int		deadlyWounded;//Tödlich Verwundet Variable
 
 
 	
@@ -177,28 +179,14 @@ public class ProfilInstance extends Playermanager{
 		}
 	}
 
-	public void getWounded() {
-		strWounded1 = txtWounded1.getText();
-		wounded1 = Integer.parseInt(strWounded1);
-		
-		strWounded2 = txtWounded2.getText();
-		wounded2 = Integer.parseInt(strWounded2);
-		
-		strWounded3 = txtWounded3.getText();
-		wounded3 = Integer.parseInt(strWounded3);
-		
-		strWounded4 = txtWounded4.getText();
-		wounded4 = Integer.parseInt(strWounded4);
-		
-		strWounded5 = txtWounded5.getText();
-		wounded5 = Integer.parseInt(strWounded5);
-		
-		strWounded6 = txtWounded6.getText();
-		wounded6 = Integer.parseInt(strWounded6);
-		
-		strWounded7 = txtWounded7.getText();
-		wounded7 = Integer.parseInt(strWounded7);
-		
+	public void getWounded() {		//Habe erstmal Deadlywounded inkludiert gelassen,sehe erstmal nicht viel Sinn darin dafür noch eine Extra Funktion zu schreiben.Ist natürlich aber einfach möglich.
+		for(int i = 1; i<=7;i++) {
+			strWounded[i-1] = txtWounded[i-1].getText();
+			wounded[i-1] = Integer.parseInt(strWounded[i-1]);
+		}
+
+		//TODO: getDeadlyWounded funktion erzeugen! <<<Siehe oberes Kommentar bei getWounded()
+		//TODO: getDeadlyWounded Textfeld anpassen
 		strDeadlywounded = txtDeadlywounded.getText();
 		deadlyWounded = Integer.parseInt(strDeadlywounded);
 	}
