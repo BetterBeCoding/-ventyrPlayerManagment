@@ -44,7 +44,10 @@ public class Playermanager {
 	public JTextField txtAttention, txtStrength, txtKnowledge, txtMagic, txtInitiative, txtMovement; //Attribute variablen
 	public JTextField txtAge, txtName, txtFolk, txtJob, txtGold, txtSilver, txtCopper, txtSkillpoints; //Charackter information Variablen
 	public JTextField txtWounded1, txtWounded3, txtWounded2, txtWounded4, txtWounded5, txtWounded6, txtWounded7, txtDeadlywounded;	//Verwundet Variablen
-
+	public int[] seitlicherVersatz = {0,74,120,168,216,264,312,360,408};// Versatzwerte für die Rüstungspunkte und Lebenspunkte
+																		//TODO:Verwundet noch als Array anlegen!(Darstellung beachten -1 element weniger)
+																		//TODO:-Später noch erweitern auf Verwundet
+																		//TODO:werte automatisiert anpassen
 	/**
 	 * Launch the application.
 	 */
@@ -196,7 +199,7 @@ public class Playermanager {
 			txtDefensepoint[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtDefensepoint[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtDefensepoint[i-1].setColumns(10);
-			txtDefensepoint[i-1].setBounds(393, 664 , 42, 27);
+			txtDefensepoint[i-1].setBounds(393 + seitlicherVersatz[i-1], 664 , 42, 27);
 			frame.getContentPane().add(txtDefensepoint[i-1]);
 		}
 
@@ -207,8 +210,8 @@ public class Playermanager {
 			txtSpecialskill[i-1].setText("test");
 			txtSpecialskill[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtSpecialskill[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
-			txtSpecialskill[i-1].setColumns(10);
-			txtSpecialskill[i-1].setBounds(708, 290 + ((i-1) * 35), 279, 30);
+			txtSpecialskill[i-1].setColumns(8);
+			txtSpecialskill[i-1].setBounds(708, 290  + ((i-1) * 35), 279, 30);
 			frame.getContentPane().add(txtSpecialskill[i-1]);
 		}
 
@@ -286,7 +289,7 @@ public class Playermanager {
 			txtLifepoints[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtLifepoints[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtLifepoints[i-1].setColumns(10);
-			txtLifepoints[i-1].setBounds(393, 760, 42, 27);
+			txtLifepoints[i-1].setBounds(393 + seitlicherVersatz[i-1], 760, 42, 27);
 			frame.getContentPane().add(txtLifepoints[i-1]);
 		}
 		
