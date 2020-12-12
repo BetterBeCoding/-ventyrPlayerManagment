@@ -109,7 +109,7 @@ public class Playermanager {
 	public void skillFields() {
 		for(int i = 1; i<=18;i++) {
 			txtSkill[i-1] = new JTextField();
-			txtSkill[i-1].setBounds(50, 220 + ((i-1) * 35), 250, 27); //jeder durchlauf +35
+			txtSkill[i-1].setBounds(50, 220 + ((i-1) * 36), 250, 27); //jeder durchlauf +35
 			txtSkill[i-1].setFont(new Font("Ubuntu", Font.BOLD, 14));
 			txtSkill[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtSkill[i-1].setText("test");
@@ -122,7 +122,7 @@ public class Playermanager {
 			txtskillFw[i-1].setFont(new Font("Ubuntu", Font.BOLD, 17));
 			txtskillFw[i-1].setHorizontalAlignment(SwingConstants.CENTER);
 			txtskillFw[i-1].setText("99");
-			txtskillFw[i-1].setBounds(313, 220 + ((i-1) * 35), 30, 25);
+			txtskillFw[i-1].setBounds(313, 220 + ((i-1) * 36), 30, 25);
 			frame.getContentPane().add(txtskillFw[i-1]);
 			txtskillFw[i-1].setColumns(10);
 		}
